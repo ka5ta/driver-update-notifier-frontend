@@ -1,0 +1,13 @@
+.table{
+    background: transparent;
+    color: black;
+    width: bold;
+    font-family: "Raleway";
+}
+
+.center{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}

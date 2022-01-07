@@ -1,12 +1,14 @@
-export interface Driver{
-id: number;
+import { Product } from './product';
 
-name: string;
-version: string;
-operatingSys: string;
-downloadLink: string;
-releaseDate: Date;
-fileSizeBytes: number;
-createdOn: Date;
+export interface Driver {
+    id: number;
+    product: Product;
+    name: string;
+    version: string;
+    operatingSys: string;
+    downloadLink: string;
+    releaseDate: Date;
+    fileSizeBytes: number;
+    createdOn: Date;
 
 }
