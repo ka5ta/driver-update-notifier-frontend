@@ -1,7 +1,7 @@
 <form #form="ngForm" (ngSubmit)="getLinkFromUser(form)" class="container is-max-widescreen">
     <div id="supportlink-field" class="field centered">
-        <label class="supportlink-text" for="link">Enter Motherboard support link: </label>
+        <label for="link">Enter Motherboard support link: </label>
         <input class="input" ngModel name="link" type="url" placeholder="Enter Link">
-        <button class="button is-outlined" type="submit">Get Drivers</button>
+        <button class="button" type="submit">Get Drivers</button>
     </div>
 </form>
