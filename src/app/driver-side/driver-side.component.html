@@ -8,7 +8,10 @@
     </header>
 
     <app-form (linkSubmittedEvent)="handleLinkSubmitted($event)"></app-form>
+
     <app-subscription *ngIf="product" [product]="product"></app-subscription>
-    <app-driver *ngIf="drivers.length>0" [drivers]="drivers" [product]="product" [showSpinner]="showSpinner">
+    <app-driver *ngIf="drivers.length>0" [drivers]="drivers" [product]="product">
     </app-driver>
 </div>
+
+<app-spinner *ngIf="loading"></app-spinner>

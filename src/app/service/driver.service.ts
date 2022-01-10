@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import { Driver } from '../model/driver';
 import { Product } from '../model/product';
 import { HttpClient } from '@angular/common/http';
-import { firstValueFrom, Observable } from 'rxjs';
-
+import { firstValueFrom, Observable, Subscription } from 'rxjs';
+import { SpinnerComponent } from '../spinner/spinner.component';
 
 @Injectable({
   providedIn: 'root'
@@ -23,11 +23,9 @@ export class DriverService {
     const responsePromise: Promise<Driver[]> = firstValueFrom(responseObservable);
     const response: Driver[] = await responsePromise; */
 
-    // start spinner
     const responseObservable: Observable<Product> = this.http.get<Product>(userURL);
     const responsePromise: Promise<Product> = firstValueFrom(responseObservable);
     const response: Product = await responsePromise;
-
 
     return response;
   }
