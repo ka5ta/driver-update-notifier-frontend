@@ -11,9 +11,11 @@ import { DriverService } from '../service/driver.service';
 export class DriverSideComponent implements OnInit {
 
   @Input() userLink: string = "";
-  drivers: Driver[] = [];
+  //drivers: Driver[] = [];
   product?: Product;
-  showSpinner: boolean = true;
+  loading: boolean = false;
+
+  downloadedDriverIds: number[] = [];
 
   constructor(private driverService: DriverService) { }
 
@@ -28,10 +30,18 @@ export class DriverSideComponent implements OnInit {
   }
 
   private async loadDriversList() {
-    this.showSpinner = true;
+    this.product = undefined;
+    // this.drivers = [];
+    this.loading = true;
     this.product = await this.driverService.getProduct(this.userLink);
-    //this.showSpinner = false;
-    this.drivers = this.product.drivers;
+    this.downloadedDriverIds = [];
+    this.loading = false;
+    // this.drivers = this.product.drivers;
   }
+
+  get drivers() {
+    return this.product?.drivers ?? [];
+  }
+
 }
 

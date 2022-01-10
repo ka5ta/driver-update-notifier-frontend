@@ -23,11 +23,9 @@ export class DriverService {
     const responsePromise: Promise<Driver[]> = firstValueFrom(responseObservable);
     const response: Driver[] = await responsePromise; */
 
-    // start spinner
     const responseObservable: Observable<Product> = this.http.get<Product>(userURL);
     const responsePromise: Promise<Product> = firstValueFrom(responseObservable);
     const response: Product = await responsePromise;
-
 
     return response;
   }

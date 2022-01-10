@@ -20,7 +20,8 @@
           <td>{{driver.operatingSys}}</td>
           <td style="text-align: center;">
             <a href={{driver.downloadLink}}>
-              <img src={{downloadImageSrc}} alt={{imageAlt}} id="download-img" />
+              <img src={{downloadImageSrc}} alt={{imageAlt}} (click)="imageClicked(driver.id)"
+                [ngClass]="{'downloaded' :  wasImageAlreadyClicked(driver.id)}" />
             </a>
           </td>
           <td>{{driver.fileSizeBytes | formatBytes}}</td>
