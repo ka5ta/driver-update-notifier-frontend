@@ -11,10 +11,11 @@ import { DriverService } from '../service/driver.service';
 export class DriverSideComponent implements OnInit {
 
   @Input() userLink: string = "";
-  // drivers: Driver[] = [];
+  //drivers: Driver[] = [];
   product?: Product;
   loading: boolean = false;
 
+  downloadedDriverIds: number[] = [];
 
   constructor(private driverService: DriverService) { }
 
@@ -33,6 +34,7 @@ export class DriverSideComponent implements OnInit {
     // this.drivers = [];
     this.loading = true;
     this.product = await this.driverService.getProduct(this.userLink);
+    this.downloadedDriverIds = [];
     this.loading = false;
     // this.drivers = this.product.drivers;
   }

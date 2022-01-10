@@ -13,7 +13,7 @@ import { SubscriptionComponent } from './subscription/subscription.component';
 import { DriverSideComponent } from './driver-side/driver-side.component';
 import { SpinnerComponent } from './spinner/spinner.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-
+import { FormatBytes } from './pipes/format-bytes.pipe'
 
 
 @NgModule({
@@ -24,7 +24,9 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     FormComponent,
     SubscriptionComponent,
     DriverSideComponent,
-    SpinnerComponent
+    SpinnerComponent,
+    FormatBytes
+
   ],
   imports: [
     BrowserModule,

@@ -4,22 +4,27 @@
     <table class="table">
       <thead>
         <tr>
-          <th>Name</th>
-          <th>Version</th>
-          <th>Release date</th>
-          <th>Operating system</th>
-          <th>Download Link</th>
-          <th>File Size</th>
+          <th class="table-title">Name</th>
+          <th class="table-title">Version</th>
+          <th class="table-title">Release date</th>
+          <th class="table-title">Operating system</th>
+          <th class="table-title">Download Link</th>
+          <th class="table-title">File Size</th>
         </tr>
       </thead>
       <tbody *ngFor="let driver of drivers">
-        <tr>
-          <td><span class="driver">{{driver.name}}</span></td>
-          <td><span class="driver">{{driver.version}}</span></td>
-          <td><span class="driver">{{driver.releaseDate}}</span></td>
-          <td><span class="driver">{{driver.operatingSys}}</span></td>
-          <td><span class="driver"><a href={{driver.downloadLink}}>Link</a></span></td>
-          <td><span class="driver">{{driver.fileSizeBytes}}</span></td>
+        <tr class="download-row">
+          <td>{{driver.name}}</td>
+          <td>{{driver.version}}</td>
+          <td>{{driver.releaseDate}}</td>
+          <td>{{driver.operatingSys}}</td>
+          <td style="text-align: center;">
+            <a href={{driver.downloadLink}}>
+              <img src={{downloadImageSrc}} alt={{imageAlt}} (click)="imageClicked(driver.id)"
+                [ngClass]="{'downloaded' :  wasImageAlreadyClicked(driver.id)}" />
+            </a>
+          </td>
+          <td>{{driver.fileSizeBytes | formatBytes}}</td>
         </tr>
       </tbody>
     </table>

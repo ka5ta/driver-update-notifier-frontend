@@ -10,7 +10,8 @@
     <app-form (linkSubmittedEvent)="handleLinkSubmitted($event)"></app-form>
 
     <app-subscription *ngIf="product" [product]="product"></app-subscription>
-    <app-driver *ngIf="drivers.length>0" [drivers]="drivers" [product]="product">
+    <app-driver *ngIf="drivers.length>0" [drivers]="drivers" [product]="product"
+        [downloadedDriverIds]="downloadedDriverIds">
     </app-driver>
 </div>
 
