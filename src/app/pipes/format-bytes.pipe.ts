@@ -11,9 +11,6 @@ export class FormatBytes implements PipeTransform {
 
         const i = Math.floor(Math.log(size) / Math.log(k));
 
-        if (size === 382085402)
-            console.log(size);
-
         return parseFloat((size / Math.pow(k, i)).toFixed(dm)) + ' ' + sizes[i];
     }
 }

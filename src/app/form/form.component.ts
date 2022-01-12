@@ -24,7 +24,6 @@ export class FormComponent implements OnInit {
     this.userLink = form.value.link;
     console.log(this.userLink);
     this.linkSubmitted(this.userLink);
-    form.reset();
   }
 
   linkSubmitted(link: string) {
