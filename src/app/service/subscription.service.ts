@@ -1,8 +1,9 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpRequest, HttpResponse } from '@angular/common/http';
 import { Injectable, EventEmitter, Output } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 import { Product } from '../model/product';
 import { SubscibeDTO } from '../model/subscribeDTO';
+import { map } from 'rxjs/operators';
 
 
 @Injectable({
@@ -10,18 +11,20 @@ import { SubscibeDTO } from '../model/subscribeDTO';
 })
 export class SubscriptionService {
 
+
   constructor(private http: HttpClient) { }
 
-  sendSubscription(email: string, product: Product) {
-    let link: string = "http://localhost:8080/api/subscribe";
-    let headers = new HttpHeaders({ 'Content-Type': 'application/json' });
-    let subDTO: SubscibeDTO = { email, productId: product.id };
+  sendSubscription(email: string, product: Product): Observable<HttpResponse<void>> {
+    const link: string = "http://localhost:8080/api/subscribe";
 
-    const body = JSON.stringify(subDTO);
-    console.log(body);
     //const body = JSON.stringify({ email: email, product: product });
+    const subDTO: SubscibeDTO = { email, productId: product.id };
 
-    this.http.post(link, body, { 'headers': headers }).subscribe(response => { console.log(response); });
+    return this.http.post<void>(link, subDTO, {
+      headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
+      observe: 'response',
+      responseType: 'json'
+    });
 
   }
 }

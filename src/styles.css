@@ -1,6 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
-@import url('https://fonts.googleapis.com/css?family=Raleway:300,600,700,800,900');
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,500,600,700,800,900');
 @import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+
+:root{
+	--button:rgb(0,153,204);
+	--button-hover:rgba(0,153,204,0.5);
+	--font:"Raleway";
+	--font-size: 16px;
+	--font-weight: 500;
+	--shadow:
+		0px 3px 1px -2px rgb(0 0 0 / 20%), 0px 2px 2px 0px rgb(0 0 0 / 14%), 0px 1px 5px 0px rgb(0 0 0 / 12%);
+}
+
 
 html{
 	background-image: linear-gradient(to right top, #051937, #004d7a, #1f9ba7, #008793, #004d7a);
@@ -8,11 +19,11 @@ html{
 	min-width: 100vw;
  }
 
+
  body{
 	color: white; 
-	font-family: "Raleway";
-	font-size: 16px;
-	font-weight: 600;
+	font-family: var(--font);
+	font-size: var(--font-size);
  }
 
  .transparent-box {
@@ -41,16 +52,18 @@ html{
 	}
 
 .button{
-	background-color: rgb(0,153,204);
+	background-color: var(--button);
 	border: transparent;
 	color: white;
-	font-weight: 600;
+	font-weight: var(--font-weight);
 	width: 150px;
+	box-shadow: var(--shadow);
 }
 
 .button:hover{
-	background-color: rgba(0,153,204,0.5);
+	background-color: var(--button-hover);
 	color: white;
+	
 }
 
 .button:focus{
@@ -71,9 +84,15 @@ html{
 	text-align: center;
   }
 
+/* Overwrite the styles of the mat-dialog-container element globally, but only for those
+that have an id of `modal-component` */
+/* https://stackoverflow.com/a/48689004/9263761 */
+mat-dialog-container#modal-component {
+	color: white;
+    border: 3px solid #262626;
+    border-radius: 11px;
+    background-image: linear-gradient(to right top, rgba(5, 25, 55, 0.7), rgba(0, 77, 122, 0.7), rgba(31, 155, 167, 0.7), rgba(0, 135, 147, 0.7), rgba(0, 77, 122, 0.7)) ;
 
-
-
-
-
+	
+}
 

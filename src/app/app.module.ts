@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DriverComponent } from './driver/driver.component';
@@ -13,7 +12,13 @@ import { SubscriptionComponent } from './subscription/subscription.component';
 import { DriverSideComponent } from './driver-side/driver-side.component';
 import { SpinnerComponent } from './spinner/spinner.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { FormatBytes } from './pipes/format-bytes.pipe'
+import { FormatBytes } from './pipes/format-bytes.pipe';
+import { ModalComponent } from './_modal/modal.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatButtonModule } from '@angular/material/button';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+
 
 
 @NgModule({
@@ -25,7 +30,8 @@ import { FormatBytes } from './pipes/format-bytes.pipe'
     SubscriptionComponent,
     DriverSideComponent,
     SpinnerComponent,
-    FormatBytes
+    FormatBytes,
+    ModalComponent
 
   ],
   imports: [
@@ -33,7 +39,11 @@ import { FormatBytes } from './pipes/format-bytes.pipe'
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    MatDialogModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]

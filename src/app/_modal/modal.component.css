@@ -1,0 +1,75 @@
+#modal-content-wrapper {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    grid-template-columns: 1fr;
+    justify-content: left;
+    
+}
+
+#modal-title {
+    font-size: 22px;
+    font-weight: 700;
+}
+
+#modal-footer {
+    justify-self: right;
+    align-self: center;
+}
+
+#modal-action-button {
+    margin-right: 30px;
+    background-color:#3b3b3b;
+}
+
+#modal-cancel-button {
+    background-color: #4e4e4e;
+}
+
+form#subscription{
+display: grid;
+height: 100%;
+grid-template-rows: 1fr auto;
+text-align: center;
+
+}
+
+.field{
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-self: center;
+    grid-gap: 10px;
+}
+
+.actions{
+display: flex;
+justify-self: right;
+gap: 10px;
+}
+
+#modal-action-button{
+	margin-right: 0px;
+	background-color: var(--button);
+    font-family: var(--font);
+	font-size: var(--font-size);
+	font-weight: var(--font-weight);
+}
+
+#modal-cancel-button{
+    background-color: var(--button);
+    font-family: var(--font);
+	font-size: var(--font-size);
+	font-weight: var(--font-weight);
+}
+
+#modal-action-button:hover{
+    background-color: var(--button-hover);
+}
+
+#modal-cancel-button:hover{
+    background-color: var(--button-hover);
+}
+
+
+

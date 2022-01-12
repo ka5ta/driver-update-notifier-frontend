@@ -1,0 +1,18 @@
+<div id="modal-content-wrapper">
+    <header id="modal-header">
+        <h1 id="modal-title">Keep posted onces new driver are available for: </h1>
+        <h1 class="header-text" style="font-size: 30px;">{{data.product.name}}</h1>
+    </header>
+    <section id="modal-body">
+        <form id="subscription" #submitionForm="ngForm" (ngSubmit)="saveSubscription(submitionForm)">
+            <div class="field">
+                <label style="margin: auto;">Enter your email for subscription:</label>
+                <input class="input" name="email" ngModel type="email" placeholder="Your email">
+            </div>
+            <div class="actions">
+                <button class="button" id="modal-cancel-button" (click)="close()" type="reset">Go back</button>
+                <button class="button" id="modal-action-button" type="submit">Subscribe</button>
+            </div>
+        </form>
+    </section>
+</div>

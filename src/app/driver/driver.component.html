@@ -1,5 +1,6 @@
 <div class="container is-max-widescreen">
   <p appLoadingScreen class="header-text" style="font-size:30px">Product Name: {{product?.name}}</p>
+  <app-subscription *ngIf="product" [product]="product"></app-subscription>
   <section class="center">
     <table class="table">
       <thead>
