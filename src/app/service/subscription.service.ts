@@ -1,4 +1,4 @@
-import { HttpClient, HttpHeaders, HttpRequest, HttpResponse } from '@angular/common/http';
+import { HttpClient, HttpEvent, HttpHeaders, HttpRequest, HttpResponse } from '@angular/common/http';
 import { Injectable, EventEmitter, Output } from '@angular/core';
 import { Observable, Subscription } from 'rxjs';
 import { Product } from '../model/product';

@@ -93,6 +93,10 @@ mat-dialog-container#modal-component {
     border-radius: 11px;
     background-image: linear-gradient(to right top, rgba(5, 25, 55, 0.7), rgba(0, 77, 122, 0.7), rgba(31, 155, 167, 0.7), rgba(0, 135, 147, 0.7), rgba(0, 77, 122, 0.7)) ;
 
-	
+}
+
+/* Overwrite the styles of MatSnackBar */
+.subscription-snackbar{
+    background-color: var(--button);
 }
 

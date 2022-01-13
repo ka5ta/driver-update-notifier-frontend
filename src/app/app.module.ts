@@ -17,6 +17,8 @@ import { ModalComponent } from './_modal/modal.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SnackbarSubscriptionComponent } from './_snackbar-subscription/snackbar-subscription.component';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 
 
@@ -31,7 +33,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     DriverSideComponent,
     SpinnerComponent,
     FormatBytes,
-    ModalComponent
+    ModalComponent,
+    SnackbarSubscriptionComponent
 
   ],
   imports: [
@@ -44,8 +47,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserAnimationsModule,
     MatButtonModule,
 
+
   ],
-  providers: [],
+  providers: [MatSnackBar],
   bootstrap: [AppComponent]
 })
 export class AppModule {
