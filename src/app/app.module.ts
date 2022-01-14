@@ -23,6 +23,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,7 +46,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
     FontAwesomeModule,
     MatDialogModule,
     BrowserAnimationsModule,
-    MatButtonModule,
+    MatButtonModule
 
 
   ],

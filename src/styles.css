@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway:300,500,600,700,800,900');
 @import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
 
+
 :root{
 	--button:rgb(0,153,204);
 	--button-hover:rgba(0,153,204,0.5);
@@ -83,6 +84,20 @@ html{
 	letter-spacing: 5px;
 	text-align: center;
   }
+
+  .invalid-feedback {
+	  color: red;
+	  font-size: 10px;
+	 display: grid;
+	 align-self: center ;
+	  
+  }
+
+  small{
+	  border: 2px solid red;
+  }
+
+
 
 /* Overwrite the styles of the mat-dialog-container element globally, but only for those
 that have an id of `modal-component` */
