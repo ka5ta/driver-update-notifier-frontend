@@ -19,6 +19,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SnackbarSubscriptionComponent } from './_snackbar-subscription/snackbar-subscription.component';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { FormatMBPipe } from './pipes/format-mb.pipe';
 
 
 
@@ -35,7 +36,8 @@ import { MatSnackBar } from '@angular/material/snack-bar';
     SpinnerComponent,
     FormatBytes,
     ModalComponent,
-    SnackbarSubscriptionComponent
+    SnackbarSubscriptionComponent,
+    FormatMBPipe
 
   ],
   imports: [
