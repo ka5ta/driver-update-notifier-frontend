@@ -4,6 +4,7 @@ import { Product } from '../model/product';
 import { HttpClient } from '@angular/common/http';
 import { firstValueFrom, Observable, Subscription } from 'rxjs';
 import { SpinnerComponent } from '../spinner/spinner.component';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +15,7 @@ export class DriverService {
 
   public async getProduct(userLink: string): Promise<Product> {
     // let urlTest = "http://localhost:8080/api/drivers?supportUrl=https://www.msi.com/Motherboard/B450-TOMAHAWK-MAX/support";
-    let userURL = "http://localhost:8080/api/drivers?supportUrl=" + userLink;
+    let userURL = environment.apiUrl + "/api/drivers?supportUrl=" + userLink;
 
 
     //console.log(userURL);
