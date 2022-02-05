@@ -1,32 +1,36 @@
-<div class="container is-max-widescreen">
-  <p appLoadingScreen class="header-text" style="font-size:30px">Product Name: {{product?.name}}</p>
+<div class="grid-center">
+  <header appLoadingScreen class="header-text" style="font-size:30px; text-align: left;">
+    {{product?.name}}
+  </header>
   <app-subscription *ngIf="product" [product]="product"></app-subscription>
-  <section class="center">
-    <table class="table">
-      <thead>
-        <tr>
-          <th class="table-title">Name</th>
-          <th class="table-title">Version</th>
-          <th class="table-title">Release date</th>
-          <th class="table-title">Operating system</th>
-          <th class="table-title">Download Link</th>
-          <th class="table-title">File Size</th>
-        </tr>
-      </thead>
-      <tbody *ngFor="let driver of drivers">
-        <tr class="download-row">
-          <td>{{driver.name}}</td>
-          <td>{{driver.version}}</td>
-          <td>{{driver.releaseDate}}</td>
-          <td>{{driver.operatingSys}}</td>
-          <td style="text-align: center;">
-            <a href={{driver.downloadLink}}>
-              <img src={{downloadImageSrc}} alt={{imageAlt}} (click)="imageClicked(driver.id)"
-                [ngClass]="{'downloaded' :  wasImageAlreadyClicked(driver.id)}" />
-            </a>
-          </td>
-          <td style="text-align: right;">{{driver.fileSizeMB | formatMB}}</td>
-        </tr>
-      </tbody>
-    </table>
-  </section>
+</div>
+
+<section class="center">
+  <table class="table">
+    <thead>
+      <tr>
+        <th class="table-title">Name</th>
+        <th class="table-title">Version</th>
+        <th class="table-title">Release date</th>
+        <th class="table-title">Operating system</th>
+        <th class="table-title">Download Link</th>
+        <th class="table-title">File Size</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let driver of drivers">
+      <tr class="download-row">
+        <td>{{driver.name}}</td>
+        <td>{{driver.version}}</td>
+        <td>{{driver.releaseDate}}</td>
+        <td>{{driver.operatingSys}}</td>
+        <td style="text-align: center;">
+          <a href={{driver.downloadLink}}>
+            <img src={{downloadImageSrc}} alt={{imageAlt}} (click)="imageClicked(driver.id)"
+              [ngClass]="{'downloaded' :  wasImageAlreadyClicked(driver.id)}" />
+          </a>
+        </td>
+        <td style="text-align: right;">{{driver.fileSizeMB | formatMB}}</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
