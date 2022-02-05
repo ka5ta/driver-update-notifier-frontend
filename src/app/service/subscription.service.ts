@@ -4,7 +4,7 @@ import { Observable, Subscription } from 'rxjs';
 import { Product } from '../model/product';
 import { SubscibeDTO } from '../model/subscribeDTO';
 import { map } from 'rxjs/operators';
-
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +15,7 @@ export class SubscriptionService {
   constructor(private http: HttpClient) { }
 
   sendSubscription(email: string, product: Product): Observable<HttpResponse<void>> {
-    const link: string = "http://localhost:8080/api/subscribe";
+    const link: string = environment.apiUrl + "/api/subscribe";
 
     //const body = JSON.stringify({ email: email, product: product });
     const subDTO: SubscibeDTO = { email, productId: product.id };

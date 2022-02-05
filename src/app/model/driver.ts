@@ -8,7 +8,7 @@ export interface Driver {
     operatingSys: string;
     downloadLink: string;
     releaseDate: Date;
-    fileSizeBytes: number;
+    fileSizeMB: number;
     createdOn: Date;
 
 }

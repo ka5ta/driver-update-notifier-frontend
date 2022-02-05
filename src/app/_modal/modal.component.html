@@ -6,13 +6,31 @@
     <section id="modal-body">
         <form id="subscription" #submitionForm="ngForm" (ngSubmit)="saveSubscription(submitionForm)">
             <div class="field">
-                <label style="margin: auto;">Enter your email for subscription:</label>
-                <input class="input" name="email" ngModel type="email" placeholder="Your email">
+                <label style="padding-top: 10px;">Enter your email for subscription:</label>
+                <div>
+                    <input class="input" name="email" #emailInput="ngModel" [(ngModel)]="email" type="email"
+                        placeholder="Your email" required email="true">
+                    <small *ngIf="emailInput.touched && !email || emailInput.dirty && !email "
+                        class=".ng-valid.required">Email is
+                        required</small>
+                    <small *ngIf="emailInput.invalid && email && emailInput.touched" class="ng-invalid">Please
+                        enter a valid email
+                        address</small>
+                    <!--                     Email invalid: {{emailInput.invalid}}
+                    pristine {{emailInput.pristine}}
+                    touched {{emailInput.touched}}
+                    dirty {{emailInput.dirty}}
+                    untouched {{emailInput.untouched}}
+                    valid {{emailInput.valid}} -->
+                </div>
             </div>
             <div class="actions">
                 <button class="button" id="modal-cancel-button" (click)="close()" type="reset">Go back</button>
                 <button class="button" id="modal-action-button" type="submit">Subscribe</button>
+
             </div>
         </form>
     </section>
 </div>
+
+<!-- 1. https://angular.io/guide/forms -->

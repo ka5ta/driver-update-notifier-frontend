@@ -2,7 +2,7 @@ import { Component, EventEmitter, Inject, Input, OnInit, Output } from '@angular
 import { MatDialog, MatDialogConfig, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { SubscriptionService } from '../service/subscription.service';
 import { Product } from '../model/product';
-import { NgForm } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
 import { DialogDataSubscription } from '../subscription/subscription.component';
 import { MatSnackBar, MatSnackBarConfig } from '@angular/material/snack-bar'; import { SnackbarSubscriptionComponent } from '../_snackbar-subscription/snackbar-subscription.component';
 import { HttpResponse } from '@angular/common/http';
@@ -23,6 +23,8 @@ export class ModalComponent implements OnInit {
   email: string = "";
   subscriptionUnsuccessful: string = "Server is not reachable, please try later."
 
+
+
   constructor(private subService: SubscriptionService,
     private dialogRef: MatDialogRef<ModalComponent>, @Inject(MAT_DIALOG_DATA) public data: DialogDataSubscription, private _snackBar: MatSnackBar) { }
 
@@ -34,7 +36,12 @@ export class ModalComponent implements OnInit {
   }
 
   saveSubscription(submitionForm: NgForm): void {
+
     this.email = submitionForm.value.email;
+
+    if (submitionForm.invalid) {
+      return;
+    }
     const responseObservable = this.subService.sendSubscription(this.email, this.data.product);
     responseObservable.subscribe({
       next: (response) => {
@@ -49,7 +56,6 @@ export class ModalComponent implements OnInit {
         this.openSubscriptionSnackBar(this.subscriptionUnsuccessful);
       }
     });
-
     this.close();
   }
 
@@ -63,6 +69,8 @@ export class ModalComponent implements OnInit {
 
     this._snackBar.openFromComponent(SnackbarSubscriptionComponent, config);
   }
+
+  log(...val: any) { console.log(...val); }
 
 }
 

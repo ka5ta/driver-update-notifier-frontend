@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway:300,500,600,700,800,900');
 @import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
 
+
 :root{
 	--button:rgb(0,153,204);
 	--button-hover:rgba(0,153,204,0.5);
@@ -77,12 +78,46 @@ html{
 
 .header-text{
 	color: #051937;
-	font-family: 'Staatliches', cursive;
+	font-family: 'Staatliches';
 	font-size: 3em;
 	font-weight: bold;
 	letter-spacing: 5px;
-	text-align: center;
+
+	
   }
+
+  .invalid-feedback {
+	  color: red;
+	  font-size: 10px;
+	 display: grid;
+	 align-self: center ;
+	  
+  }
+
+  small{
+	  border: 2px solid red;
+  }
+
+  .grid-center{
+	display: grid;
+	grid-template-areas: 
+            "product-title button";
+	grid-template-columns: 1fr auto;
+	grid-gap: 20px;
+	height: 100%;
+	padding: 60px 20px 10px 20px;
+  }
+
+  .grid-center > header {
+	grid-area: product-title;
+  }
+
+  .grid-center > app-subscription {
+	grid-area: button;
+  }
+
+
+
 
 /* Overwrite the styles of the mat-dialog-container element globally, but only for those
 that have an id of `modal-component` */
