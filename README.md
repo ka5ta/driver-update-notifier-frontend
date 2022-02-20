@@ -3,7 +3,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Run
 
-`ng serve`~to start. Navigate to `http://localhost:4200/`.
+`ng serve` to start. Navigate to `http://localhost:4200/`.
 
 ## Link examples:
 - MSI: https://www.msi.com/Motherboard/B450-TOMAHAWK-MAX/support
